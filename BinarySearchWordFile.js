@@ -1,22 +1,97 @@
 var input= require('../Neha Algorithm/Utility_Algo/utility_algo');
 var access=require('readline-sync')
 
-		
-		
-	//	var file = new File("/home/admin1/Desktop/Bridgelabz material");
-        var fileName=access.question("enter filename");
-        let data=fileCall(fileName);
-        input.bubbleSort(data);
+const fs = require('fs')
 
-        function fileCall(fileName)
-        {
-            var fileStream=require('fs');
-            var f=fileStream.readFileSync(fileName,'utf8');
-            var arr=f.trim().split(' ');
-            console.log((arr+" in arr"));
-            return arr;
+
+
+console.log(readfile());
+
+var paragraph; var singleword = []; var keyword;
+var arrayofelements = []; var count = 0;
+
+function readfile() 
+{
+	fs.readFile('InputFile.txt', (err, data) => 
+	{
+        paragraph = data.toString();
+        console.log(paragraph);
+        
+        keyword = access.question("Enter any keyword to search");
+	   
+		singleword = paragraph.split(" ");
+
+
+		var sortedstringarray =[];
+		sortedstringarray = input.insertionSort(singleword);
+		
+		console.log(sortedstringarray);
+		
+		var start=0;
+		var end=singleword.length-1;
+
+		
+		
+    
+        if (input.BinarySearch(singleword, keyword, parseInt(start),parseInt(end))) {
+            console.log("Keyword is present in the file");
+        } else {
+            console.log("Keyword not found");
+		}
+		
+    })
+}
+
+
+
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	var file = new File("/home/admin1/Desktop/Bridgelabz material");
+        // var fileName=access.question("enter filename");
+        // let data=fileCall(fileName);
+        // input.bubbleSort(data);
+
+        // function fileCall(fileName)
+        // {
+        //     var fileStream=require('fs');
+        //     var f=fileStream.readFileSync(fileName,'utf8');
+        //     var arr=f.trim().split(' ');
+        //     console.log((arr+" in arr"));
+        //     return arr;
             
-        }
+        // }
 		  
 		 
 		  
