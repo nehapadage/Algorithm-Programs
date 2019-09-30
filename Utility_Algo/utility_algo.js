@@ -1,6 +1,7 @@
 module.exports = {
 
     anagram(s1, s2) {
+        try{
         var n1 = s1.length;
         var n2 = s2.length;
         var flag = false;
@@ -21,11 +22,19 @@ module.exports = {
         } else {
             console.log("Strings are not anagram.");
         }
+    }
+    catch(error)
+    {
+        console.log("");
+        
+    }
     },
 
 
 
     bubbleSort(arr) {
+        try{
+        
         var length = arr.length;
 
         for (var i = 0; i < length; i++) {
@@ -41,10 +50,16 @@ module.exports = {
             }
         }
         console.log(arr);
+    }
+    catch(error){
+        console.log(" ");
+        
+    }
     },
 
 
     BinarySearch(arr, x, start, end) {
+        try{
         if (start > end)
             return false;
 
@@ -58,11 +73,18 @@ module.exports = {
             return this.BinarySearch(arr, x, start, (mid - 1));
         else
             return this.BinarySearch(arr, x, (mid + 1), end);
+        }
+        catch(error)
+        {
+            console.log(" ");
+            
+        }
     },
 
 
 
     PrimeNo(n) {
+        try{
         var cnt = 0;
 
         var arr = new Array(n);
@@ -83,13 +105,24 @@ module.exports = {
             }
         }
         return arr;
+    }
+    catch(error)
+    {
+        console.log("String are not allowed here");
+    }
     },
 
 
     CalFTemp(temp) {
+        try{
         var ftemp;
         ftemp = (temp * 9 / 5) + 32;
         console.log("Temperature from celsius to Fahrenheit : " + ftemp);
+        }
+        catch(error){
+            console.log("Strings are not allowed here");
+            
+        }
     },
 
     CalCTemp(temp) {
